@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://www.velinashopping.com/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ckb" href="https://www.velinashopping.com/?lang=ku"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.velinashopping.com/?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.velinashopping.com/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.velinashopping.com/"/>
+  </url>
+  <url>
+    <loc>https://www.velinashopping.com/how-it-works</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ckb" href="https://www.velinashopping.com/how-it-works?lang=ku"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.velinashopping.com/how-it-works?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.velinashopping.com/how-it-works?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.velinashopping.com/how-it-works"/>
+  </url>
+  <url>
+    <loc>https://www.velinashopping.com/about</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ckb" href="https://www.velinashopping.com/about?lang=ku"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.velinashopping.com/about?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.velinashopping.com/about?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.velinashopping.com/about"/>
+  </url>
+  <url>
+    <loc>https://www.velinashopping.com/contact</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ckb" href="https://www.velinashopping.com/contact?lang=ku"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.velinashopping.com/contact?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.velinashopping.com/contact?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.velinashopping.com/contact"/>
+  </url>
+  <url>
+    <loc>https://www.velinashopping.com/shipping</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ckb" href="https://www.velinashopping.com/shipping?lang=ku"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.velinashopping.com/shipping?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.velinashopping.com/shipping?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.velinashopping.com/shipping"/>
+  </url>
+  <url>
+    <loc>https://www.velinashopping.com/returns</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ckb" href="https://www.velinashopping.com/returns?lang=ku"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.velinashopping.com/returns?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.velinashopping.com/returns?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.velinashopping.com/returns"/>
+  </url>
+  <url>
+    <loc>https://www.velinashopping.com/privacy</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ckb" href="https://www.velinashopping.com/privacy?lang=ku"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.velinashopping.com/privacy?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.velinashopping.com/privacy?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.velinashopping.com/privacy"/>
+  </url>
+  <url>
+    <loc>https://www.velinashopping.com/terms</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ckb" href="https://www.velinashopping.com/terms?lang=ku"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.velinashopping.com/terms?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.velinashopping.com/terms?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.velinashopping.com/terms"/>
+  </url>
+</urlset>
