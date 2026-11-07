@@ -13,11 +13,12 @@ It's one static `index.html` file (HTML + CSS + vanilla JS) with no build step.
 | WhatsApp number / Instagram | `CONFIG.WHATSAPP_NUMBER`, `CONFIG.INSTAGRAM_USER` |
 | Any text (Kurdish / Arabic / English) | the `translations` object (`ku`, `ar`, `en`) |
 | FAQ questions & answers | `translations.<lang>.faq` |
-| Customer reviews | `revName`, `revText`, `revCity` in `translations`, then remove the `ph-tag` badges in the HTML |
+| Trust cards / real reviews | `trustCard1Title` … `trustCard3Text` in `translations`; a template for adding real customer reviews is in the HTML comment above the reviews section |
 | Category photos | put photos in `images/` and follow the comment above the `.cats` grid |
 
-Text in `[square brackets]` is a placeholder. Replace it with your real policy or info.
+Current policies: delivery to all cities in Kurdistan & Iraq, 15–25 days, cash on delivery only, refund/replacement for broken or damaged items, dollar rate updated monthly (orders use the rate at the time of ordering).
 
 Language links you can share: `?lang=ku`, `?lang=ar`, `?lang=en`.
 
 > Velina Shopping is an independent shopping service and is not affiliated with SHEIN.
+

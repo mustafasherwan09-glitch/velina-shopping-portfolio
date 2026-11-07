@@ -392,6 +392,11 @@ html[lang="en"] .kicker{text-transform:uppercase}
 .review .city{font-size:.85rem;color:var(--muted)}
 .ph-tag{position:absolute;top:14px;inset-inline-end:14px;font-size:.7rem;font-weight:700;background:var(--blush);color:var(--pink-700);padding:2px 10px;border-radius:999px}
 .reviews-cta{text-align:center;margin-top:28px}
+.trust-card{border-style:solid;border-color:rgba(216,27,122,.12);text-align:center;transition:transform .25s ease, box-shadow .25s ease}
+.trust-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.trust-card .feature-ic{margin:0 auto 14px}
+.trust-card h3{font-size:1.15rem;font-weight:700;margin-bottom:6px}
+.trust-card p{color:var(--muted);font-size:.95rem}
 .ig-link{display:inline-flex;align-items:center;gap:8px;font-weight:700;color:var(--pink-600);text-decoration:none;padding:10px 18px;border-radius:999px;background:var(--blush)}
 .ig-link:hover{background:var(--pink-200)}
 @media (min-width:760px){.reviews{grid-template-columns:repeat(3,1fr)}}
@@ -743,9 +748,17 @@ html[lang="en"] .kicker{text-transform:uppercase}
 
   <!-- ============ 7. CUSTOMER FEEDBACK ============ -->
   <!--
-    PLACEHOLDERS ONLY – replace with REAL customer reviews (with their permission).
-    Edit the texts in the translations object (keys rev1Name, rev1Text, rev1City ...),
-    then remove the "placeholder" badge (<span class="ph-tag">) from each card.
+    Trust cards based on real facts (verified Instagram, followers, FeedBack highlight).
+    Texts live in the translations object: trust1Title / trust1Text ... trust3Text.
+
+    TO ADD REAL CUSTOMER REVIEWS LATER (with the customer's permission), paste cards like this
+    inside <div class="reviews"> and write the text directly (or add new translation keys):
+
+    <figure class="review reveal" style="margin:0">
+      <span class="quote-mark" aria-hidden="true">&ldquo;</span>
+      <blockquote>Real customer message here</blockquote>
+      <footer><span class="avatar" aria-hidden="true">S</span><div><cite>Customer name / initials</cite><span class="city">City</span></div></footer>
+    </figure>
   -->
   <section class="section" id="reviews" aria-labelledby="rev-title">
     <div class="container">
@@ -756,24 +769,21 @@ html[lang="en"] .kicker{text-transform:uppercase}
       </div>
 
       <div class="reviews">
-        <figure class="review reveal" style="margin:0">
-          <span class="ph-tag" data-i18n="phTag"></span>
-          <span class="quote-mark" aria-hidden="true">&ldquo;</span>
-          <blockquote data-i18n="revText"></blockquote>
-          <footer><span class="avatar" aria-hidden="true">V</span><div><cite data-i18n="revName"></cite><span class="city" data-i18n="revCity"></span></div></footer>
-        </figure>
-        <figure class="review reveal" data-delay="1" style="margin:0">
-          <span class="ph-tag" data-i18n="phTag"></span>
-          <span class="quote-mark" aria-hidden="true">&ldquo;</span>
-          <blockquote data-i18n="revText"></blockquote>
-          <footer><span class="avatar" aria-hidden="true">V</span><div><cite data-i18n="revName"></cite><span class="city" data-i18n="revCity"></span></div></footer>
-        </figure>
-        <figure class="review reveal" data-delay="2" style="margin:0">
-          <span class="ph-tag" data-i18n="phTag"></span>
-          <span class="quote-mark" aria-hidden="true">&ldquo;</span>
-          <blockquote data-i18n="revText"></blockquote>
-          <footer><span class="avatar" aria-hidden="true">V</span><div><cite data-i18n="revName"></cite><span class="city" data-i18n="revCity"></span></div></footer>
-        </figure>
+        <article class="review trust-card reveal">
+          <span class="feature-ic"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg></span>
+          <h3 data-i18n="trustCard1Title"></h3>
+          <p data-i18n="trustCard1Text"></p>
+        </article>
+        <article class="review trust-card reveal" data-delay="1">
+          <span class="feature-ic"><svg class="icon" aria-hidden="true"><use href="#i-ig"/></svg></span>
+          <h3 data-i18n="trustCard2Title"></h3>
+          <p data-i18n="trustCard2Text"></p>
+        </article>
+        <article class="review trust-card reveal" data-delay="2">
+          <span class="feature-ic"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span>
+          <h3 data-i18n="trustCard3Title"></h3>
+          <p data-i18n="trustCard3Text"></p>
+        </article>
       </div>
 
       <div class="reviews-cta reveal">
@@ -887,7 +897,7 @@ const translations = {
     heroTitleA: 'لە کوردستانەوە لە SHEIN بازاڕ بکە،',
     heroTitleB: 'ئێمە تا بەردەم دەرگا بۆت دەهێنین',
     heroSub: 'تەنها سەبەتەکەت بۆمان بنێرە، باقی کارەکان لای ئێمە. بەبێ پێشەکی، هێنانەوە بە خۆڕایی و هەموو داشکاندنەکانی SHEIN بۆ خۆت دەگەڕێتەوە.',
-    rateLabel: 'نرخی دۆلاری ئەمڕۆ',
+    rateLabel: 'نرخی دۆلاری ئەم مانگە',
     ctaOrder: 'ئۆردەر لە واتسئاپ',
     ctaHow: 'چۆن کار دەکات؟',
     trust1: 'بەبێ پێشەکی',
@@ -907,7 +917,7 @@ const translations = {
     f4Title: 'داشکاندن 100% بۆتۆ دەگەڕێتەوە',
     f4Text: 'هەر داشکاندن و کۆپۆنێک لە SHEIN هەبێت، بە تەواوی لەسەر ئۆردەرەکەت حیساب دەکرێت.',
     f5Title: 'تامیناتی تەواوی ئۆردەرەکەت',
-    f5Text: 'لە ساتی ئۆردەرکردنەوە تا گەیشتنی بە دەستت، بەرپرسیارێتی تەواوی ئۆردەرەکەت لە ئەستۆی ئێمەیە.',
+    f5Text: 'تا ئۆردەرەکەت دەگاتە دەستت، بەرپرسیارێتییەکەی لە ئەستۆی ئێمەیە. ئەگەر کاڵایەک شکاو یان تێکچوو گەیشت، پارەکەت بۆ دەگەڕێنینەوە یان دەیگۆڕینەوە.',
 
     howKicker: 'ئاسان و خێرا',
     howTitle: 'چۆن کار دەکات؟',
@@ -928,7 +938,7 @@ const translations = {
     calcLabel: 'کۆی سەبەتە بە دۆلار',
     calcPlaceholder: 'بۆ نموونە 85',
     calcQuick: 'بڕی خێرا',
-    calcNote: 'بە نرخی {rate} دینار. نرخی کۆتایی دوای پشتڕاستکردنەوەی سەبەتەکە دیاری دەکرێت.',
+    calcNote: 'بە نرخی ئێستا {rate} دینار. نرخی دۆلار مانگانە نوێ دەکرێتەوە و نرخی کۆتایی بە نرخی کاتی ئۆردەرکردن دیاری دەکرێت.',
     calcResult: 'نرخ بە دیناری عێراقی',
     calcApprox: 'نرخی نزیکەیی - هێنانەوە بە خۆڕاییە',
     calcBtn: 'ئەم بڕە لە واتسئاپ بنێرە',
@@ -946,30 +956,32 @@ const translations = {
     cat4d: 'خشڵ، کاتژمێر، چاویلکە و زۆر شتی تر',
 
     revKicker: 'FeedBack',
-    revTitle: 'ڕای کڕیارەکانمان',
-    revSub: 'متمانەی ئێوە گەورەترین خەڵاتی ئێمەیە.',
-    phTag: 'نموونە',
-    revName: '[ناوی کڕیار]',
-    revCity: '[شار]',
-    revText: '[ڕای کڕیار لێرە بنووسە]',
-    revMore: 'ڕای زیاتر لە ستۆری FeedBack ی ئینستاگرام ببینە',
+    revTitle: 'متمانەی کڕیارەکانمان',
+    revSub: 'ڕای ڕاستەقینەی کڕیارەکانمان و وێنەی ئۆردەرەکانیان لە ستۆری FeedBack ی ئینستاگرامەکەماندا ببینە.',
+    trustCard1Title: 'ئەکاونتی ڤێریفایدکراو',
+    trustCard1Text: 'ئەکاونتی ئینستاگرامی ئێمە {ig} ڤێریفاید کراوە و نیشانەی شینی هەیە.',
+    trustCard2Title: 'نزیکەی 4,000 فۆڵۆوەر',
+    trustCard2Text: 'نزیکەی 4,000 کەس لە ئینستاگرام فۆڵۆمان دەکەن و متمانەیان پێمانە.',
+    trustCard3Title: 'ڕای ڕاستەقینە',
+    trustCard3Text: 'سکرینشۆتی نامەکان و وێنەی ئۆردەری کڕیارەکانمان لە ستۆری FeedBack دا پارێزراون.',
+    revMore: 'ڕای کڕیارەکان لە ستۆری FeedBack ی ئینستاگرام ببینە',
 
     faqKicker: 'یارمەتی',
     faqTitle: 'پرسیارە باوەکان',
     faqSub: 'وەڵامی ئەو پرسیارانەی زۆرتر لێمان دەکرێن. پرسیاری ترت هەیە؟ لە واتسئاپ بۆمان بنووسە.',
     faq: [
       ['گەیاندنی ئۆردەر چەند ڕۆژ دەخایەنێت؟',
-       'بە شێوەیەکی گشتی نزیکەی [X–Y] ڕۆژ دەخایەنێت لە پشتڕاستکردنەوەی ئۆردەرەکەوە. هەر کە ئۆردەرەکەت گەیشت، پەیوەندیت پێوە دەکەین بۆ ڕێکخستنی کاتی گەیاندن.'],
+       'گەیاندن 15 بۆ 25 ڕۆژ دەخایەنێت لە پشتڕاستکردنەوەی ئۆردەرەکەوە. هەر کە ئۆردەرەکەت گەیشت، پەیوەندیت پێوە دەکەین بۆ ڕێکخستنی کاتی گەیاندن.'],
       ['بۆ کام شارەکان دەگەیەنن؟',
-       'دەگەیەنین بۆ [هەولێر، سلێمانی، دهۆک، کەرکووک...] و [شارەکانی تری عێراق]. بۆ دڵنیابوون لە شارەکەت، لە واتسئاپ پرسیارمان لێ بکە.'],
+       'بۆ هەموو شار و شارۆچکەکانی هەرێمی کوردستان و عێراق دەگەیەنین، تا بەردەم دەرگای ماڵەکەت و بە خۆڕایی.'],
       ['چۆن پارە بدەم؟',
-       'هیچ پێشەکییەک نییە. پارەکە بە نەختی لە کاتی وەرگرتنی ئۆردەرەکەت دەدەیت. [ڕێگای تری پارەدان ئەگەر هەبێت].'],
+       'تەنها پارەدان لە کاتی وەرگرتن (COD). هیچ پێشەکییەک نییە و تا ئۆردەرەکەت نەگاتە دەستت، هیچ پارەیەک نادەیت.'],
       ['ئەگەر کاڵایەک نەمابێت چی دەبێت؟',
        'پێش ئۆردەرکردن هەموو کاڵاکان دەپشکنین. ئەگەر کاڵایەک نەمابوو، لە ئۆردەرەکە لادەبرێت و بە سکرینشۆت پیشانت دەدەین، پارەی ئەو کاڵایەش لێت وەرناگیرێت.'],
-      ['ئەگەر قەبارەکە گونجاو نەبوو یان ویستم بیگەڕێنمەوە؟',
-       '[سیاسەتی گەڕاندنەوە و گۆڕینەوە لێرە بنووسە]. پێشنیار دەکەین پێش ئۆردەرکردن خشتەی قەبارەکانی SHEIN بە وردی بخوێنیتەوە، ئێمەش ئامادەین یارمەتیت بدەین لە هەڵبژاردنی قەبارەی گونجاو.'],
+      ['ئەگەر ئۆردەرەکەم شکاو یان تێکچوو گەیشت چی دەبێت؟',
+       'ئۆردەرەکەت بە تەواوی تامین کراوە. ئەگەر کاڵایەک شکاو، تێکچوو یان هەڵە گەیشت، پارەکەت بۆ دەگەڕێنینەوە یان کاڵاکەت بۆ دەگۆڕینەوە. تەنها وێنەی کاڵاکە لە واتسئاپ بۆمان بنێرە. بۆ قەبارەش، پێشنیار دەکەین پێش ئۆردەرکردن خشتەی قەبارەکانی SHEIN بە وردی بخوێنیتەوە، ئێمەش ئامادەین یارمەتیت بدەین.'],
       ['نرخی دۆلار چۆن حیساب دەکرێت؟',
-       'نرخی کاڵاکان بە دۆلار لە SHEIN وەردەگرین و دوای حیسابکردنی هەموو داشکاندنەکان، بە نرخی {rate} دینار دەیگۆڕین بۆ دینار. نرخی دۆلار [ڕۆژانە / هەفتانە] نوێ دەکرێتەوە.']
+       'نرخی کاڵاکان بە دۆلار لە SHEIN وەردەگرین و دوای حیسابکردنی هەموو داشکاندنەکان دەیگۆڕین بۆ دینار. نرخی دۆلار مانگانە نوێ دەکرێتەوە و ئۆردەرەکەت بەو نرخە حیساب دەکرێت کە لە کاتی ئۆردەرکردندا هەیە. نرخی ئێستا: {rate} دینار.']
     ],
 
     ctaTitle: 'ئامادەیت بۆ ئۆردەری داهاتووت؟',
@@ -1010,7 +1022,7 @@ const translations = {
     heroTitleA: 'تسوّق من SHEIN وأنت في كوردستان،',
     heroTitleB: 'ونوصّل طلبك لحد باب بيتك',
     heroSub: 'أرسل لنا سلّتك وخلّي الباقي علينا. بدون مقدمة، شحن مجاني، وكل خصومات SHEIN تُحتسب لك بالكامل.',
-    rateLabel: 'سعر الدولار اليوم',
+    rateLabel: 'سعر الدولار لهذا الشهر',
     ctaOrder: 'اطلب عبر واتساب',
     ctaHow: 'كيف تعمل الخدمة؟',
     trust1: 'بدون مقدمة',
@@ -1030,7 +1042,7 @@ const translations = {
     f4Title: 'احتساب الخصومات 100%',
     f4Text: 'كل خصومات وكوبونات SHEIN تُحتسب لك بالكامل على طلبك.',
     f5Title: 'ضمان كامل لطلبك',
-    f5Text: 'نتحمّل المسؤولية الكاملة عن طلبك من لحظة الشراء حتى يوصل لإيدك.',
+    f5Text: 'طلبك مسؤوليتنا حتى يوصل لإيدك. إذا وصلت قطعة مكسورة أو تالفة، نرجّع لك المبلغ أو نستبدلها.',
 
     howKicker: 'سهل وسريع',
     howTitle: 'كيف تعمل الخدمة؟',
@@ -1051,7 +1063,7 @@ const translations = {
     calcLabel: 'مجموع السلة بالدولار',
     calcPlaceholder: 'مثلاً 85',
     calcQuick: 'مبالغ سريعة',
-    calcNote: 'حسب سعر {rate} دينار. السعر النهائي يُحدَّد بعد تأكيد السلة.',
+    calcNote: 'حسب السعر الحالي {rate} دينار. سعر الدولار يتحدّث شهرياً، والسعر النهائي حسب سعر وقت الطلب.',
     calcResult: 'السعر بالدينار العراقي',
     calcApprox: 'سعر تقريبي - والتوصيل مجاني',
     calcBtn: 'أرسل المبلغ على واتساب',
@@ -1069,30 +1081,32 @@ const translations = {
     cat4d: 'مجوهرات، ساعات، نظارات والمزيد',
 
     revKicker: 'FeedBack',
-    revTitle: 'آراء زبائننا',
-    revSub: 'ثقتكم هي أكبر مكافأة لنا.',
-    phTag: 'نموذج',
-    revName: '[اسم الزبون]',
-    revCity: '[المدينة]',
-    revText: '[اكتب رأي الزبون هنا]',
-    revMore: 'شوف آراء أكثر في ستوري FeedBack على إنستغرام',
+    revTitle: 'ثقة زبائننا',
+    revSub: 'شوف آراء زبائننا الحقيقية وصور طلباتهم في ستوري FeedBack على إنستغرام.',
+    trustCard1Title: 'حساب موثّق',
+    trustCard1Text: 'حسابنا على إنستغرام {ig} موثّق بالعلامة الزرقاء.',
+    trustCard2Title: 'قرابة 4,000 متابع',
+    trustCard2Text: 'قرابة 4,000 شخص يتابعوننا ويثقون بنا على إنستغرام.',
+    trustCard3Title: 'آراء حقيقية',
+    trustCard3Text: 'لقطات رسائل زبائننا وصور طلباتهم محفوظة في ستوري FeedBack.',
+    revMore: 'شوف آراء الزبائن في ستوري FeedBack على إنستغرام',
 
     faqKicker: 'مساعدة',
     faqTitle: 'الأسئلة الشائعة',
     faqSub: 'إجابات لأكثر الأسئلة اللي توصلنا. عندك سؤال ثاني؟ راسلنا على واتساب.',
     faq: [
       ['كم يستغرق توصيل الطلب؟',
-       'عادةً يستغرق التوصيل حوالي [X–Y] يوم من تأكيد الطلب. ونتواصل معك أول ما يوصل طلبك لترتيب موعد التوصيل.'],
+       'يستغرق التوصيل من 15 إلى 25 يوماً من تأكيد الطلب. ونتواصل معك أول ما يوصل طلبك لترتيب موعد التوصيل.'],
       ['لأي مدن توصلون؟',
-       'نوصّل إلى [أربيل، السليمانية، دهوك، كركوك...] و[باقي مدن العراق]. راسلنا على واتساب للتأكد من مدينتك.'],
+       'نوصّل لكل مدن ومناطق إقليم كوردستان والعراق، لحد باب بيتك ومجاناً.'],
       ['كيف أدفع؟',
-       'بدون أي مقدمة. تدفع نقداً عند استلام طلبك. [طرق دفع أخرى إن وجدت].'],
+       'الدفع نقداً عند الاستلام فقط (COD). بدون أي مقدمة، وما تدفع ولا دينار قبل ما يوصلك طلبك.'],
       ['شنو يصير إذا كانت قطعة نافدة؟',
        'نفحص كل القطع قبل الطلب. إذا كانت قطعة نافدة، نحذفها من الطلب ونرسل لك لقطة شاشة، وما تدفع ثمنها.'],
-      ['إذا المقاس ما ناسبني أو ردت أرجّع القطعة؟',
-       '[اكتب سياسة الإرجاع والاستبدال هنا]. ننصحك تراجع جدول المقاسات في SHEIN قبل الطلب، ونحن جاهزين نساعدك تختار المقاس المناسب.'],
+      ['شنو يصير إذا وصلني الطلب مكسور أو تالف؟',
+       'طلبك مضمون بالكامل. إذا وصلتك قطعة مكسورة أو تالفة أو غير القطعة المطلوبة، نرجّع لك المبلغ أو نستبدلها لك. فقط أرسل لنا صورة القطعة على واتساب. وبالنسبة للمقاسات، ننصحك تراجع جدول المقاسات في SHEIN قبل الطلب، ونحن جاهزين نساعدك.'],
       ['كيف يُحسب سعر الدولار؟',
-       'نأخذ أسعار القطع بالدولار من SHEIN، وبعد احتساب كل الخصومات نحوّلها للدينار حسب سعر {rate} دينار. يتم تحديث السعر [يومياً / أسبوعياً].']
+       'نأخذ أسعار القطع بالدولار من SHEIN، وبعد احتساب كل الخصومات نحوّلها للدينار. سعر الدولار يتحدّث شهرياً، ويُحسب طلبك حسب السعر المعتمد وقت الطلب. السعر الحالي: {rate} دينار.']
     ],
 
     ctaTitle: 'جاهز لطلبك الجاي؟',
@@ -1133,7 +1147,7 @@ const translations = {
     heroTitleA: 'Shop SHEIN from Kurdistan,',
     heroTitleB: 'delivered to your door',
     heroSub: 'Just send us your basket and leave the rest to us. No deposit, free delivery, and every SHEIN discount goes straight back to you.',
-    rateLabel: "Today's rate",
+    rateLabel: "This month's rate",
     ctaOrder: 'Order on WhatsApp',
     ctaHow: 'See how it works',
     trust1: 'No deposit',
@@ -1153,7 +1167,7 @@ const translations = {
     f4Title: '100% of SHEIN discounts',
     f4Text: 'Every SHEIN sale and coupon is applied in full to your order.',
     f5Title: 'Your whole order, guaranteed',
-    f5Text: 'From the moment we place your order until it reaches you, we take full responsibility for it.',
+    f5Text: 'Your order is our responsibility until it reaches you. If anything arrives broken or damaged, we refund or replace it.',
 
     howKicker: 'Easy & quick',
     howTitle: 'How it works',
@@ -1174,7 +1188,7 @@ const translations = {
     calcLabel: 'Basket total in USD',
     calcPlaceholder: 'e.g. 85',
     calcQuick: 'Quick amounts',
-    calcNote: 'Based on {rate} IQD. The final price is confirmed after we check your basket.',
+    calcNote: 'Based on the current rate of {rate} IQD. The rate is updated monthly, and your final price uses the rate at the time you order.',
     calcResult: 'Price in Iraqi dinars',
     calcApprox: 'Approximate price - delivery is free',
     calcBtn: 'Send this amount on WhatsApp',
@@ -1192,30 +1206,32 @@ const translations = {
     cat4d: 'Jewellery, watches, sunglasses & more',
 
     revKicker: 'FeedBack',
-    revTitle: 'What our customers say',
-    revSub: 'Your trust is our biggest reward.',
-    phTag: 'Placeholder',
-    revName: '[Customer name]',
-    revCity: '[City]',
-    revText: '[Feedback]',
-    revMore: 'See more in our FeedBack highlight on Instagram',
+    revTitle: 'Trusted by our customers',
+    revSub: 'See real feedback and order photos from our customers in our FeedBack highlight on Instagram.',
+    trustCard1Title: 'Verified account',
+    trustCard1Text: 'Our Instagram account {ig} is verified with the blue badge.',
+    trustCard2Title: 'Nearly 4,000 followers',
+    trustCard2Text: 'Close to 4,000 people follow and trust us on Instagram.',
+    trustCard3Title: 'Real feedback',
+    trustCard3Text: 'Screenshots of customer messages and their order photos are saved in our FeedBack highlight.',
+    revMore: 'See customer feedback on Instagram',
 
     faqKicker: 'Help',
     faqTitle: 'Frequently asked questions',
     faqSub: 'Answers to the questions we hear most. Something else? Message us on WhatsApp.',
     faq: [
       ['How long does delivery take?',
-       'Delivery usually takes around [X–Y] days from the moment your order is confirmed. As soon as it arrives, we contact you to arrange delivery.'],
+       'Delivery takes 15 to 25 days from the moment your order is confirmed. As soon as it arrives, we contact you to arrange delivery.'],
       ['Which cities do you deliver to?',
-       'We deliver to [Erbil, Sulaymaniyah, Duhok, Kirkuk...] and [other cities in Iraq]. Message us on WhatsApp to confirm your city.'],
+       'We deliver to every city and town across the Kurdistan Region and Iraq, right to your door and free of charge.'],
       ['How do I pay?',
-       'There is no deposit. You pay in cash when you receive your order. [Other payment methods, if any].'],
+       'Cash on delivery (COD) only. There is no deposit, and you pay nothing until your order is in your hands.'],
       ['What if an item is sold out?',
        'We check every item before ordering. If something is sold out, we remove it from your order and send you a screenshot, and you do not pay for it.'],
-      ['What if the size does not fit or I want to return something?',
-       '[Write your return and exchange policy here]. We recommend checking the SHEIN size chart before ordering, and we are happy to help you choose the right size.'],
+      ['What if my order arrives broken or damaged?',
+       'Your whole order is guaranteed. If an item arrives broken, damaged or wrong, we refund you or replace it. Just send us a photo of the item on WhatsApp. For sizing, we recommend checking the SHEIN size chart before ordering, and we are happy to help you choose.'],
       ['How does the exchange rate work?',
-       'We take the USD prices from SHEIN, apply every discount, then convert to dinars at {rate} IQD. The rate is updated [daily / weekly].']
+       'We take the USD prices from SHEIN, apply every discount, then convert to dinars. The rate is updated monthly, and your order is calculated at the rate in effect when you place it. Current rate: {rate} IQD.']
     ],
 
     ctaTitle: 'Ready for your next order?',
@@ -1261,9 +1277,10 @@ const translations = {
   /* write text safely; {rate} becomes an LTR-isolated <bdi> so numbers never flip inside RTL text */
   function setText(el, str) {
     el.textContent = '';
-    String(str).split('{rate}').forEach((part, i) => {
-      if (i > 0) { const b = document.createElement('bdi'); b.dir = 'ltr'; b.textContent = '100$ = ' + fmt(CONFIG.RATE_IQD_PER_100_USD); el.appendChild(b); }
-      if (part) el.appendChild(document.createTextNode(part));
+    const tokens = { rate: () => '100$ = ' + fmt(CONFIG.RATE_IQD_PER_100_USD), ig: () => '@' + CONFIG.INSTAGRAM_USER };
+    String(str).split(/\{(rate|ig)\}/).forEach((part, i) => {
+      if (i % 2 === 1) { const b = document.createElement('bdi'); b.dir = 'ltr'; b.textContent = tokens[part](); el.appendChild(b); }
+      else if (part) el.appendChild(document.createTextNode(part));
     });
   }
 
