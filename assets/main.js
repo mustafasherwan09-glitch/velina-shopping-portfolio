@@ -368,12 +368,18 @@
       '<div class="size-foot reveal"><p class="small">' + fmt(h.sizeNote) + '</p><p><strong>' + fmt(h.sizeAsk) + '</strong></p>' +
         '<a class="btn btn-primary btn-sm" ' + ext(waUrl(c.waSize)) + '>' + icon('ruler') + esc(h.sizeAskBtn) + '</a></div></div></section>';
 
-    // Customer feedback – PLACEHOLDERS (replace in i18n.js: revName / revCity / revText – never invent reviews)
+    // Customer feedback – shows REAL reviews from i18n.js (home.reviews) when you add them;
+    // until then it shows honest trust cards that point to the FeedBack highlight on Instagram. Never invent reviews.
+    var reviews = h.reviews || [];
+    var revIc = ['ig', 'store', 'cash'];
+    var revBody = reviews.length
+      ? reviews.map(function (r) {
+          return '<figure class="review real reveal" style="margin:0"><span class="q" aria-hidden="true">&ldquo;</span>' +
+            '<blockquote>' + fmt(r.text) + '</blockquote><figcaption><footer><span class="avatar">' + icon('user') + '</span><div><cite>' + fmt(r.name) + '</cite><span class="city">' + fmt(r.city) + '</span></div></footer></figcaption></figure>';
+        }).join('')
+      : (h.revCards || []).map(function (x, i) { return card(x, revIc[i] || 'heart'); }).join('');
     out += '<section class="section" id="reviews" aria-labelledby="rev-title"><div class="container">' + sectionHead(h.revKicker, h.revTitle, h.revSub, 'rev-title') +
-      '<div class="grid grid-3">' + [0, 1, 2].map(function () {
-        return '<figure class="review reveal" style="margin:0"><span class="ph-tag">' + fmt(h.revTag) + '</span><span class="q" aria-hidden="true">&ldquo;</span>' +
-          '<blockquote>' + fmt(h.revText) + '</blockquote><figcaption><footer><span class="avatar">' + icon('user') + '</span><div><cite>' + fmt(h.revName) + '</cite><span class="city">' + fmt(h.revCity) + '</span></div></footer></figcaption></figure>';
-      }).join('') + '</div><p class="center mt-lg reveal"><a class="btn btn-ghost btn-sm" ' + ext(C.instagramUrl) + '>' + icon('ig') + esc(h.revMore) + '</a></p></div></section>';
+      '<div class="grid grid-3">' + revBody + '</div><p class="center mt-lg reveal"><a class="btn btn-primary btn-sm" ' + ext(C.instagramUrl) + '>' + icon('ig') + esc(h.revMore) + '</a></p></div></section>';
 
     // FAQ
     out += '<section class="section blush" id="faq" aria-labelledby="faq-title"><div class="container">' + sectionHead(h.faqKicker, h.faqTitle, h.faqSub, 'faq-title') +

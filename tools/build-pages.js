@@ -170,3 +170,4 @@ fs.writeFileSync(path.join(ROOT, 'site.webmanifest'), JSON.stringify({
   ]
 }, null, 2) + '\n', 'utf8');
 console.log('wrote sitemap.xml, robots.txt, site.webmanifest');
+

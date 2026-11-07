@@ -460,3 +460,4 @@ a.channel:hover{transform:translateY(-3px);box-shadow:var(--shadow);color:var(--
   .js .reveal{opacity:1!important;transform:none!important}
 }
 .form-card{display:flex;flex-direction:column}
+.review.real{border-style:solid;border-color:rgba(216,27,122,.14);box-shadow:var(--shadow-sm)}
