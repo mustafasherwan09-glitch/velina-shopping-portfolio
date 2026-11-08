@@ -63,6 +63,7 @@
     var updated = c.dateFmt.replace('{d}', d[2]).replace('{m}', c.months[d[1] - 1]).replace('{y}', d[0]);
     var map = {
       name: E(C.name[lang]),
+      legalName: L(C.legalName),
       phone: L(C.phone),
       email: L(C.email),
       ig: L('@' + C.instagramUser),
@@ -220,9 +221,31 @@
           '<li>' + icon('clock') + '<span>' + fmt('{hours}') + '</span></li>' +
         '</ul></div>' +
       '</div>' +
-      '<div class="footer-bottom"><p>' + fmt(c.disclaimer) + '</p><p>' + fmt(c.rights) + '</p></div>' +
+      '<div class="footer-bottom"><p>' + fmt(c.disclaimer) + '</p><p>' + fmt(c.rights) + '</p>' + legalLine() + '</div>' +
     '</div></footer>' +
     '<a class="wa-float" ' + ext(waUrl(c.waGreeting)) + ' aria-label="' + esc(c.waAria) + '">' + icon('wa') + '</a>';
+  }
+
+  /* Legal owner line (footer). In the pre-rendered static HTML it is written in English so crawlers read it. */
+  var staticLegalEnglish = false;
+  function legalLine() {
+    var useEn = staticLegalEnglish && lang !== 'en';
+    var txt = (useEn ? I.common.en : t('common')).legalLine || '';
+    var html = esc(txt).replace('{legalName}', ltr(C.legalName));
+    return '<p class="legal-line"' + (useEn ? ' lang="en" dir="ltr"' : '') + '>' + html + '</p>';
+  }
+  function legalBox() {
+    var c = t('common'), lb = c.legalLabels || {};
+    function row(label, value) { return '<div><dt>' + esc(label) + '</dt><dd>' + value + '</dd></div>'; }
+    return '<section class="section" id="legal" aria-labelledby="legal-title"><div class="container narrow"><div class="legal-box reveal">' +
+      '<h2 id="legal-title">' + icon('clip') + esc(c.legalTitle) + '</h2><dl>' +
+        row(lb.trading, ltr(C.name.en)) +
+        row(lb.legal, ltr(C.legalName)) +
+        row(lb.type, esc(c.businessType)) +
+        row(c.labels.address, fmt('{address}')) +
+        row(c.labels.phone, '<a href="tel:+' + C.phoneIntl + '">' + ltr(C.phone) + '</a>') +
+        row(c.labels.email, '<a href="mailto:' + esc(C.email) + '">' + ltr(C.email) + '</a>') +
+      '</dl></div></div></section>';
   }
 
   function sectionHead(kicker, title, sub, id) {
@@ -406,6 +429,7 @@
         '<div class="grid grid-4">' + a.offer.map(function (x, i) { return card(x, offerIc[i]); }).join('') + '</div>' +
         '<div class="independence reveal mt-lg"><span class="card-ic">' + icon('shield') + '</span><div><h2>' + fmt(a.independenceTitle) + '</h2><p>' + fmt(a.independence) + '</p></div></div>' +
       '</div></section>' +
+      legalBox() +
       locationBlock('', '', '', true) +
       ctaBanner(a.ctaTitle, a.ctaText, a.ctaBtn);
   }
@@ -451,6 +475,7 @@
       '<p class="form-note">' + icon('lock') + '<span>' + fmt(k.formNote) + '</span></p></form>';
     return pageHero(k) +
       '<section class="section" aria-labelledby="ch-title"><div class="container">' + sectionHead('', k.channelsTitle, '', 'ch-title') + '<div class="channels">' + channels + '</div></div></section>' +
+      legalBox() +
       '<section class="section blush" id="message"><div class="container">' + form + '</div></section>' +
       staySafe(false) +
       locationBlock('', '', '', true);
@@ -666,7 +691,7 @@
   }
 
   /* exports (used by tools/build-pages.js to pre-render the HTML files) */
-  root.VelinaRender = { init: init, setContext: setContext, renderApp: renderApp, pageMeta: pageMeta, sprite: SPRITE, PAGES: PAGES, plain: plain };
+  root.VelinaRender = { init: init, setContext: setContext, renderApp: renderApp, pageMeta: pageMeta, sprite: SPRITE, PAGES: PAGES, plain: plain, setStaticLegal: function (v) { staticLegalEnglish = !!v; } };
 
   if (typeof document !== 'undefined' && root.CONFIG && root.I18N) {
     init(root.CONFIG, root.I18N);

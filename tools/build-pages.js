@@ -22,6 +22,7 @@ for (const f of ['assets/config.js', 'assets/i18n.js', 'assets/main.js']) {
 }
 const C = ctx.CONFIG, R = ctx.VelinaRender;
 R.init(C, ctx.I18N);
+R.setStaticLegal(true); // footer legal-owner line is written in English in the static HTML (crawlable)
 
 const SITE = C.website.replace(/\/$/, '');
 const DEFAULT = C.defaultLang || 'ku';
@@ -36,6 +37,7 @@ const jsonLd = {
   '@type': 'LocalBusiness',
   '@id': SITE + '/#business',
   name: C.name.en,
+  legalName: C.legalName,
   alternateName: [C.name.ku, C.name.ar],
   description: 'Independent online personal-shopping service. Customers choose items on SHEIN, we purchase them on their behalf, ship from the UAE and deliver to the door anywhere in Iraq and the Kurdistan Region. Not affiliated with SHEIN.',
   url: SITE + '/',

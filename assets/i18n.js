@@ -27,6 +27,10 @@ I18N.common = {
     hoursText: 'شەممە تا پێنجشەممە، {hoursRange} · هەینی داخراوە',
     disclaimer: 'ڤێلینا شۆپینگ خزمەتگوزارییەکی سەربەخۆی بازاڕکردنە. هیچ پەیوەندی، پشتگیری یان هاوبەشییەکمان لەگەڵ SHEIN نییە. SHEIN مارکەیەکی بازرگانیی خاوەنەکەیەتی.',
     rights: '© {year} ڤێلینا شۆپینگ. هەموو مافەکان پارێزراون.',
+    legalLine: 'Velina Shopping ناوی بازرگانی {legalName} ـە (خاوەنداریەتی تاکەکەسی)، هەولێر، عێراق.',
+    legalTitle: 'زانیاریی یاسایی',
+    legalLabels: { trading: 'ناوی بازرگانی', legal: 'ناوی یاسایی', type: 'جۆری کار' },
+    businessType: 'خاوەنداریەتی تاکەکەسی',
     safeTitle: 'ئاگاداری سەلامەتی',
     safeText: 'تەنها لە ڕێگەی واتسئاپی {phone} و ئینستاگرامی {ig}{fbClause} پەیوەندیت پێوە دەکەین. هەرگیز داوای ژمارەی کارتی بانکی، وشەی نهێنی یان کۆدی پشتڕاستکردنەوە ناکەین. پێشەکی تەنها بۆ ئۆردەری سەروو {threshold} داوا دەکرێت و تەنها لە ڕێگەی ئەم کەناڵە فەرمییانەوە. ئەگەر ئەکاونتێکی ساختەت بینی، ئاگادارمان بکەرەوە.',
     fbClause: ' و پەیجی فەرمیی فەیسبووکمان',
@@ -60,6 +64,10 @@ I18N.common = {
     hoursText: 'من السبت إلى الخميس، {hoursRange} · الجمعة عطلة',
     disclaimer: 'ڤيلينا شوبينغ خدمة تسوّق مستقلة. لسنا تابعين لشركة SHEIN ولا معتمدين منها ولا شركاء لها. SHEIN علامة تجارية مملوكة لأصحابها.',
     rights: '© {year} ڤيلينا شوبينغ. جميع الحقوق محفوظة.',
+    legalLine: 'Velina Shopping هو الاسم التجاري لـ {legalName} (مالك فردي)، أربيل، العراق.',
+    legalTitle: 'المعلومات القانونية',
+    legalLabels: { trading: 'الاسم التجاري', legal: 'الاسم القانوني', type: 'نوع النشاط' },
+    businessType: 'ملكية فردية',
     safeTitle: 'تنبيه الأمان',
     safeText: 'نتواصل معك فقط عبر واتساب {phone} وإنستغرام {ig}{fbClause}. لا نطلب أبداً أرقام البطاقات المصرفية أو كلمات المرور أو رموز التحقق. الدفع المسبق يُطلب فقط للطلبات التي تزيد على {threshold}، وفقط عبر هذه القنوات الرسمية. أبلغنا عن أي حساب مزيّف.',
     fbClause: ' وصفحتنا الرسمية على فيسبوك',
@@ -93,6 +101,10 @@ I18N.common = {
     hoursText: 'Saturday to Thursday, {hoursRange} · Friday closed',
     disclaimer: 'Velina Shopping is an independent shopping service. We are not affiliated with, endorsed by, or partnered with SHEIN. SHEIN is a trademark of its respective owner.',
     rights: '© {year} Velina Shopping. All rights reserved.',
+    legalLine: 'Velina Shopping is a trading name of {legalName} (sole proprietor), Erbil, Iraq.',
+    legalTitle: 'Legal information',
+    legalLabels: { trading: 'Trading name', legal: 'Legal name', type: 'Business type' },
+    businessType: 'Sole proprietorship',
     safeTitle: 'Stay safe',
     safeText: 'We only contact you from WhatsApp {phone} and Instagram {ig}{fbClause}. We never ask for card numbers, passwords or verification codes. Prepayment is only requested for orders above {threshold} and only through these official channels. Report fake accounts to us.',
     fbClause: ', and our official Facebook page',
@@ -1108,6 +1120,7 @@ I18N.privacy = {
     lead: 'تایبەتمەندیی تۆ بۆ ئێمە گرنگە. ئەم سیاسەتە بە زمانێکی سادە ڕووندەکاتەوە چ زانیارییەک کۆدەکەینەوە، بۆچی بەکاری دەهێنین، لەگەڵ کێ هاوبەشی دەکەین و چ مافێکت هەیە.',
     sections: [
       { id: 'who-we-are', h: 'ئێمە کێین', body: [
+        'ئەم خزمەتگوزارییانە لەلایەن {legalName} ـەوە پێشکەش دەکرێن، کە بە ناوی بازرگانیی Velina Shopping کار دەکات.',
         '{name} خزمەتگوزارییەکی سەربەخۆی کڕینی کەسیی ئۆنلاینە. تۆ کاڵاکان لە ئەپ یان ماڵپەڕی SHEIN هەڵدەبژێریت، سەبەتەکەت بۆمان دەنێریت و ئێمە دەیانکڕین، دەیانهێنین و لە عێراق و هەرێمی کوردستان دەیانگەیەنینە دەستت. کارەکەمان ئۆنلاینە و نووسینگەیەکمان هەیە لە {address}.',
         'لەم سیاسەتەدا، «ئێمە» واتە {name}. دەتوانیت لەم ڕێگایانەوە پەیوەندیمان پێوە بکەیت:',
         ['واتساپ و تەلەفۆن: [{phone}](whatsapp)', 'ئیمەیڵ: [{email}](email)', 'ئینستاگرام: [{ig}](instagram)', 'نووسینگە: {address}'],
@@ -1189,6 +1202,7 @@ I18N.privacy = {
     lead: 'خصوصيتك تهمّنا. توضّح هذه السياسة بكلمات بسيطة ما المعلومات التي نجمعها، ولماذا نستخدمها، ومع من نشاركها، وما الحقوق التي تملكها.',
     sections: [
       { id: 'who-we-are', h: 'من نحن', body: [
+        'تُقدَّم هذه الخدمات من قِبل {legalName}، الذي يعمل تحت الاسم التجاري Velina Shopping.',
         '{name} خدمة تسوّق شخصي مستقلة عبر الإنترنت. تختار المنتجات من تطبيق SHEIN أو موقعه، وترسل لنا سلّتك، فنشتريها نيابةً عنك ونشحنها ونوصلها إليك في العراق وإقليم كوردستان. نعمل عبر الإنترنت ولدينا مكتب في {address}.',
         'في هذه السياسة، تعني كلمتا «نحن» و«لنا» {name}. يمكنك التواصل معنا عبر:',
         ['واتساب والهاتف: [{phone}](whatsapp)', 'البريد الإلكتروني: [{email}](email)', 'إنستغرام: [{ig}](instagram)', 'المكتب: {address}'],
@@ -1270,6 +1284,7 @@ I18N.privacy = {
     lead: 'Your privacy matters to us. This policy explains in simple words what information we collect, why we use it, who we share it with and what rights you have.',
     sections: [
       { id: 'who-we-are', h: 'Who we are', body: [
+        'These services are provided by {legalName}, trading as Velina Shopping.',
         '{name} is an independent online personal-shopping service. You choose items on the SHEIN app or website, send us your basket, and we buy them on your behalf, ship them and deliver them to you in Iraq and the Kurdistan Region. We run our business online and have an office at {address}.',
         'In this policy, “we”, “us” and “our” mean {name}. You can reach us here:',
         ['WhatsApp and phone: [{phone}](whatsapp)', 'Email: [{email}](email)', 'Instagram: [{ig}](instagram)', 'Office: {address}'],
@@ -1354,6 +1369,7 @@ I18N.terms = {
     lead: 'ئەم مەرجانە ڕێکی دەخەن کە چۆن لە ڕێگەی {name}ەوە داوا دەکەیت و ئێمە چۆن کاڵاکانت لە SHEIN بۆ دەکڕین و دەیگەیەنینە دەرگای ماڵەکەت. تکایە پێش داواکردن بە وردی بیانخوێنەوە.',
     sections: [
       { id: 'acceptance', h: 'ڕازیبوون بە مەرجەکان', body: [
+        'ئەم خزمەتگوزارییانە لەلایەن {legalName} ـەوە پێشکەش دەکرێن، کە بە ناوی بازرگانیی Velina Shopping کار دەکات.',
         'کاتێک لە ڕێگەی هەر یەکێک لە کەناڵەکانمانەوە (واتساپ، ئینستاگرام، فەیسبووک یان ئیمەیڵ) داوایەک دەنێریت، واتە ئەم مەرجانەت خوێندووەتەوە و ڕازیت پێیان.',
         'ئەگەر ڕازی نیت بە هەر بەشێکی ئەم مەرجانە، تکایە داوا مەکە.'
       ] },
@@ -1487,6 +1503,7 @@ I18N.terms = {
     lead: 'توضّح هذه الشروط كيفية الطلب عبر {name}، وكيف نشتري منتجاتك من SHEIN ونوصلها إلى باب بيتك. يُرجى قراءتها بعناية قبل الطلب.',
     sections: [
       { id: 'acceptance', h: 'الموافقة على الشروط', body: [
+        'تُقدَّم هذه الخدمات من قِبل {legalName}، الذي يعمل تحت الاسم التجاري Velina Shopping.',
         'عندما ترسل طلباً عبر أيٍّ من قنواتنا (واتساب أو إنستغرام أو فيسبوك أو البريد الإلكتروني)، فهذا يعني أنك قرأت هذه الشروط ووافقت عليها.',
         'إذا كنت لا توافق على أي جزء من هذه الشروط، يُرجى عدم الطلب.'
       ] },
@@ -1620,6 +1637,7 @@ I18N.terms = {
     lead: 'These terms explain how ordering through {name} works and how we buy your items from SHEIN and deliver them to your door. Please read them carefully before you order.',
     sections: [
       { id: 'acceptance', h: 'Acceptance of these terms', body: [
+        'These services are provided by {legalName}, trading as Velina Shopping.',
         'When you place an order through any of our channels (WhatsApp, Instagram, Facebook or email), you confirm that you have read and accept these terms.',
         'If you do not agree with any part of these terms, please do not place an order.'
       ] },

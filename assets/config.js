@@ -11,6 +11,9 @@
 window.CONFIG = {
   name: { en: 'Velina Shopping', ku: 'ڤێلینا شۆپینگ', ar: 'ڤيلينا شوبينغ' },
 
+  // Legal owner (Velina Shopping is a trading name of a sole proprietor). Shown in Latin capitals in every language.
+  legalName: 'MUSTAFA SHERWAN OTHMAN',
+
   // Contact
   phone: '+964 775 542 4343',          // shown on the site
   phoneIntl: '9647755424343',          // used for wa.me and tel: links (no + or spaces)
